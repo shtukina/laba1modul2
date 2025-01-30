@@ -110,3 +110,4 @@ def test_classes():
         dog3 = Dog("Max", "Beagle", -1)  # Ожидается ошибка
     except ValueError as e:
         print(f"Ошибка при создании собаки: {e}")
+        
