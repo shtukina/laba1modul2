@@ -24,3 +24,4 @@ except ValueError as e: print(f"Ошибка при создании курса:
 
 # Запуск тестов
 test_classes()
+
