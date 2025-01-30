@@ -1,25 +1,26 @@
-from task import Car, Book, Tree  # Импортируем классы из предыдущего задания
+account2 = BankAccount("", 50.0)  # Ожидается ошибка
+except ValueError as e: print(f"Ошибка при создании банковского счёта: {e}")
+try:
+    account3 = BankAccount("1234567890", -10.0)  # Ожидается ошибка
+except ValueError as e:
+    print(f"Ошибка при создании банковского счёта: {e}")
 
-if __name__ == "__main__":
-    # Инстанцируем объекты классов
-    car = Car("Toyota", "Camry", 2015)
-    book = Book("1984", "George Orwell", 328)
-    tree = Tree("Oak", 5.0)
+try:
+    account1.withdraw(200.0)  # Ожидается ошибка
+except ValueError as e:
+    print(f"Ошибка при снятии средств: {e}")
 
-    # Проверка метода start_engine с некорректными аргументами
-    try:
-        print(car.start_engine(123))  # Некорректный вызов с числом вместо строки
-    except TypeError:
-        print('Ошибка: неправильные данные')
+# Тестирование класса OnlineCourse
+try:
+    course1 = OnlineCourse("Python Programming", "John Doe", 10)
+    print(f"Курс '{course1.title}' создан.")
 
-    # Проверка метода read с некорректными аргументами
-    try:
-        print(book.read("ten"))  # Некорректный вызов с строкой вместо числа
-    except TypeError:
-        print('Ошибка: неправильные данные')
+    course2 = OnlineCourse("", "Jane Doe", 5)  # Ожидается ошибка
+except ValueError as e: print(f"Ошибка при создании курса: {e}")
 
-    # Проверка метода grow с некорректными аргументами
-    try:
-        print(tree.grow("three"))  # Некорректный вызов со строкой вместо числа
-    except TypeError:
-        print('Ошибка: неправильные данные')
+try:
+    course3 = OnlineCourse("Data Science", "Alice Smith", -2)  # Ожидается ошибка
+except ValueError as e: print(f"Ошибка при создании курса: {e}")
+
+# Запуск тестов
+test_classes()
